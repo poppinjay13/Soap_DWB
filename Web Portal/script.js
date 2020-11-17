@@ -54,7 +54,7 @@ $('.next-button.phone').click(
     function() {
         console.log("Something");
         $('.phone-section').addClass("fold-up");
-        $('.address').removeClass("folded");
+        $('.address-section').removeClass("folded");
     }
 );
 
@@ -74,5 +74,24 @@ $('.next-button.address').click(
         $('.address-section').addClass("fold-up");
         $('.success').css("marginTop", 0);
         document.dataForm.submit();
+    }
+);
+
+$('.search').on("change keyup paste",
+    function() {
+        if ($(this).val()) {
+            $('.icon-paper-plane').addClass("next");
+        } else {
+            $('.icon-paper-plane').removeClass("next");
+        }
+    }
+);
+
+$('.next-button.search').click(
+    function() {
+        console.log("Something");
+        $('.search-section').addClass("fold-up");
+        $('.success').css("marginTop", 0);
+        document.searchForm.submit();
     }
 );
