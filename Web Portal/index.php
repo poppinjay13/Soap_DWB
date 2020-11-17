@@ -93,7 +93,7 @@ if (isset($_POST['name'])) {
         <footer class="footer">
             <center>
                 <p>
-                    <a href="search.html">Search For A Student </a>
+                    <a href="search.php">Search For a Student </a>
                 </p>
                 <br><br><br><br>
                 <p>A project by 100446 - <a href="https://poppinjay13.github.io/">Ian Odundo</a></p>

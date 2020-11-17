@@ -90,7 +90,6 @@ $('.next-button.search').click(
     function() {
         console.log("Something");
         $('.search-section').addClass("fold-up");
-        $('.success').css("marginTop", 0);
         document.searchForm.submit();
     }
 );
