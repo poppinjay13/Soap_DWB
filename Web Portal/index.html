@@ -19,21 +19,21 @@
             <h1>Register as a Student</h1>
             <p>Fill in all the required information</p>
         </header>
-        <form>
+        <form name="dataForm" action="upload.php" method="POST">
             <div class="input-section name-section">
-                <input class="name" type="text" placeholder="Enter your full names" autocomplete="off" />
+                <input class="name" type="text" name="name" placeholder="Enter your full names" />
                 <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-user"></i></span><span class="next-button name"><i class="fa fa-arrow-up"></i></span></div>
             </div>
             <div class="input-section email-section folded">
-                <input class="email" type="email" placeholder="Enter your email address" />
+                <input class="email" type="email" name="email" placeholder="Enter your email address" />
                 <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-envelope-o"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
             </div>
             <div class="input-section phone-section folded">
-                <input class="phone" type="phone" placeholder="Enter your phone number" />
+                <input class="phone" type="phone" name="phone" placeholder="Enter your phone number" />
                 <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-mobile"></i></span><span class="next-button phone"><i class="fa fa-arrow-up"></i></span></div>
             </div>
             <div class="input-section address-section folded">
-                <input class="address" type="text" placeholder="Enter your address" />
+                <input class="address" type="text" name="address" placeholder="Enter your address" />
                 <div class="animated-button"><span class="icon-repeat-lock"><i class="fa fa-map-marker"></i></span><span class="next-button address"><i class="fa fa-paper-plane"></i></span></div>
             </div>
             <div class="success">

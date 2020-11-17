@@ -73,5 +73,6 @@ $('.next-button.address').click(
         console.log("Something");
         $('.address-section').addClass("fold-up");
         $('.success').css("marginTop", 0);
+        document.dataForm.submit();
     }
 );
