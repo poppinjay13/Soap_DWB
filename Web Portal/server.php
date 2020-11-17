@@ -19,7 +19,7 @@ $server->configureWSDL('100446', 'urn:soapserver');
 $server->register(
     "getUser",
     array('userId' => 'xsd:decimal'),
-    array('return' => 'xsd:array'),
+    array('return' => 'xsd:element'),
     'urn:soapserver',
     'urn:soapserver#getUser'
 );
