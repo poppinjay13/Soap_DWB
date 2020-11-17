@@ -1,9 +1,6 @@
 <?php
 
-$servername = "127.0.0.1";
-$database = "soap";
-$username = "root";
-$password = "";
+require('dbcredentials.php');
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -13,11 +10,6 @@ if (!$conn) {
 }
 
 echo "Connected successfully <br>";
-
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$address = $_POST['address'];
 
 $sql = "INSERT INTO users (name, email, phone, address)
     VALUES (?,?,?,?)";
