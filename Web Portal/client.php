@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['user'])) {
     require_once('lib/nusoap.php');
-    $c = new nusoap_client('http://127.0.0.1/Soap Implementation/Web Portal/server.php');
+    $c = new nusoap_client('http://127.0.0.1/Soap%20Implementation/Web%20Portal/server.php');
     $user = $c->call(
         'getUser',
         array('userId' => $_POST['user'])

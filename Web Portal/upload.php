@@ -17,7 +17,8 @@ $stmt = mysqli_prepare($conn, $sql);
 $stmt->bind_param("ssss", $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['address']);
 
 if ($stmt->execute()) {
-    echo "New record created successfully";
+    $last_id = $conn->insert_id;
+    echo "New record created successfully. New Student ID is: " . $last_id;
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
