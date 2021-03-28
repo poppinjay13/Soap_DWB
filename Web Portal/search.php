@@ -1,11 +1,40 @@
 <?php
 if (isset($_POST['user'])) {
-    require_once('lib/nusoap.php');
+    /*require_once('lib/nusoap.php');
     $c = new nusoap_client('http://127.0.0.1/Soap%20Implementation/Web%20Portal/server.php');
     $user = $c->call(
         'getUser',
         array('userId' => $_POST['user'])
-    );
+    );*/
+    $userId = $_POST['user'];
+
+    require('dbcredentials.php');
+    $mysqli = new mysqli($servername, $username, $password, $database);
+    $stmt = $mysqli->prepare("SELECT * FROM users WHERE id = ?");
+    $stmt->bind_param("s", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $user = array(
+            'id' => intval($row['id']),
+            'name' => $row['name'],
+            'email' => $row['email'],
+            'phone' => $row['phone'],
+            'address' => $row['address'],
+            'message' => "Succesfully retrieved the Student"
+        );
+    } else {
+        $user = array(
+            'id' => 0,
+            'name' => "",
+            'email' => "",
+            'phone' => "",
+            'address' => "",
+            'message' => "No Student found with this ID"
+        );
+    }
 }
 
 ?>
